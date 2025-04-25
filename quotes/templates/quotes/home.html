@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- 🌟 Welcome Hero Banner -->
+<div class="p-5 mb-4 bg-light rounded-3 shadow-sm text-center">
+  <div class="container py-5">
+    <h1 class="display-4 fw-bold">Welcome to QuoteBoard</h1>
+    <p class="lead mb-4">
+      Save your favorite thoughts, discover inspiration, and share wisdom — one quote at a time.
+    </p>
+    <a href="{% url 'add_quote' %}" class="btn btn-primary btn-lg">
+      ➕ Add a New Quote
+    </a>
+  </div>
+</div>
+
+<!-- 📝 Quote of the Day Section -->
+{% if quote %}
+<div class="card mx-auto shadow p-4" style="max-width: 700px;">
+  <div class="card-body text-center">
+    <h3 class="mb-4">🌟 Quote of the Day</h3>
+    <blockquote class="blockquote">
+      <p class="fs-4">“{{ quote.content }}”</p>
+      <footer class="blockquote-footer mt-3">{{ quote.author }}</footer>
+    </blockquote>
+  </div>
+</div>
+{% else %}
+<!-- No quotes yet -->
+<div class="text-center text-muted mt-5">
+  <h5>No quotes available yet!</h5>
+  <p>Be the first to add one 📝</p>
+  <a href="{% url 'add_quote' %}" class="btn btn-outline-secondary">
+    ➕ Add a Quote
+  </a>
+</div>
+{% endif %}
+
+{% endblock %}

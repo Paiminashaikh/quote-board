@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="mb-4 text-center">📚 All Quotes</h2>
+
+<!-- 🔍 Search Bar -->
+<div class="container mb-5">
+  <form method="get" action="{% url 'list_quotes' %}" class="d-flex justify-content-center">
+    <input type="text" name="q" class="form-control w-50 me-2" placeholder="Search quotes or authors..." value="{{ request.GET.q }}">
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+</div>
+
+<!-- 📝 Quotes List -->
+<div class="row justify-content-center">
+{% for quote in quotes %}
+  <div class="col-md-6">
+    <div class="card mb-4 shadow-sm">
+      <div class="card-body">
+        <blockquote class="blockquote">
+          <p class="fs-5 mb-3">“{{ quote.content }}”</p>
+          <footer class="blockquote-footer">
+            <a href="{% url 'quotes_by_author' author=quote.author %}" class="text-decoration-none">
+              {{ quote.author }}
+            </a>
+          </footer>
+        </blockquote>
+        <div class="d-flex justify-content-between mt-3">
+          <form action="{% url 'like_quote' quote.id %}" method="post" class="d-inline">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-sm btn-outline-success">
+              ❤️ {{ quote.likes }}
+            </button>
+          </form>
+          <div>
+            <a href="{% url 'edit_quote' quote.id %}" class="btn btn-sm btn-outline-primary me-2">Edit</a>
+            <a href="{% url 'delete_quote' quote.id %}" class="btn btn-sm btn-outline-danger">Delete</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% empty %}
+  <div class="text-center text-muted mt-5">
+    {% if request.GET.q %}
+      <p>No quotes found for "<strong>{{ request.GET.q }}</strong>".</p>
+    {% else %}
+      <p>No quotes available. Be the first to <a href="{% url 'add_quote' %}">add one</a>!</p>
+    {% endif %}
+  </div>
+{% endfor %}
+</div>
+{% endblock %}
