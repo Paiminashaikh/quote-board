@@ -1,87 +1,39 @@
-# 📚 QuoteBoard
+# ✨ QuoteBoard – Save & Share Inspiring Quotes
 
-Welcome to **QuoteBoard** — a simple, clean app where you can collect, like, and manage your favorite quotes!  
-Whether it's inspiration for the day or a reminder from your favorite author, keep it all in one place.
+QuoteBoard is a Django-powered web application where users can add, browse, and manage their favorite quotes.  
+It’s built to be clean, simple, and beginner-friendly – ideal for students, writers, or anyone who loves thoughtful words.
 
 ---
 
-## 🚀 What you can do
+## 🚀 Features
 
-- ✍️ Add your favorite quotes
-- ❤️ Like quotes that inspire you
-- ✏️ Edit and update saved quotes
-- 🗑️ Delete quotes you no longer need
-- 🔍 Search quotes by author name or keywords
-- 📚 View all quotes by a particular author
-- 🎲 See a "Quote of the Day" every time you visit!
+- 📝 Add a quote with author name
+- 📜 View all quotes in a beautiful card layout
+- 🔍 Search quotes by keyword or author
+- 🔄 Edit & Delete existing quotes
+- 💖 Like a quote (basic interaction)
+- 🏷️ Tag quotes by category (Love, Life, Motivational, etc.)
+- 🎯 Filter quotes by author name
+- 🔒 Built using Django's form validation and ORM
+- 🎨 Styled with Bootstrap 5
+
+---
+
+## 📸 Demo
+
+> Coming soon — once hosted!  
+_(You can run it locally by following the instructions below.)_
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Backend:** Python, Django
-- **Frontend:** Bootstrap 5
-- **Database:** SQLite (default Django DB)
+- **Backend:** Python 3, Django 5  
+- **Frontend:** HTML5, Bootstrap 5  
+- **Database:** SQLite (default with Django)  
+- **Version Control:** Git + GitHub  
 
 ---
 
-## 🖥️ How to run the project locally
+## 📂 Project Structure
 
-1. Clone this repository:
-
-    ```bash
-    git clone https://github.com/your-username/quote-board.git
-    cd quote-board
-    ```
-
-2. Create and activate a virtual environment:
-
-    ```bash
-    python -m venv env
-    env\Scripts\activate   # for Windows
-    source env/bin/activate  # for macOS/Linux
-    ```
-
-3. Install the requirements:
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-4. Run database migrations:
-
-    ```bash
-    python manage.py migrate
-    ```
-
-5. Start the server:
-
-    ```bash
-    python manage.py runserver
-    ```
-
-6. Visit in your browser:
-
-    ```
-    http://127.0.0.1:8000/
-    ```
-
----
-
-## 📌 Version
-
-- This is the first release — **Version 1.0**
-- Core features implemented: Add, Edit, Delete, Like, Search, Filter quotes
-- Basic frontend design using Bootstrap 5
-
----
-
-## ✨ What's next?
-
-- Adding user login/signup
-- Uploading images with quotes
-- Making QuoteBoard mobile app 📱
-
----
-
-> Made with a lot of learning and love ❤️ by Paimina Shaikh.
